@@ -23,7 +23,7 @@ I started Minikube using Docker as the driver:
 ```bash
 minikube start --driver=docker
 minikube status
-### Step 2 - Creating a Deployment
+###  Step 2 - Creating a Deployment 
 - Write the yaml file and run this command
 kubectl apply -f deployment-task5.yaml
 - To verify pods use this command
