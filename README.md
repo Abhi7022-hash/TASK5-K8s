@@ -16,35 +16,44 @@ This task helped me understand how Kubernetes manages applications using **pods*
 
 ---
 
-##  Step-by-Step Process
+## 🪜 Step-by-Step Process
 
-###  Step 1 — Starting Minikube
+### 🟢 Step 1 — Starting Minikube
 I started Minikube using Docker as the driver:
 ```bash
 minikube start --driver=docker
 minikube status
-###  Step 2 - Creating a Deployment 
-- Write the yaml file and run this command
+
+Step 2 — Creating a Deployment
+I wrote the YAML file named deployment-task5.yaml and applied it:
 kubectl apply -f deployment-task5.yaml
-- To verify pods use this command
+To verify that pods are running:
 kubectl get pods
-### Step 3 - Creating a Service
-- Write the yaml file and this command
+Screenshot:![Pods Running](screenshots/get-pods.png)
+
+Step 3 — Creating a Service
+I created another YAML file named service-task5.yaml and applied it:
 kubectl apply -f service-task5.yaml
-- To verify Services use this command
+To verify the service: ![Service Created](screenshots/get-svc.png)
 kubectl get svc
-### Step 5 - Accessing the Applicaion
-- Use this command
+
+Step 4 — Accessing the Application
+To access the Nginx application in my browser, I used:
 minikube service task5-service
-### Step 6 - Scaling the Deployment
-- Use this command
+
+Step 5 — Scaling the Deployment
+To scale the number of pods, I used:
 kubectl scale deployment task5-deployment --replicas=4
-- To verify the pods
+To confirm the scaling:
 kubectl get pods
-### Step 7 - Checking the pod details and logs
+
+Step 6 — Checking Pod Details and Logs
+To describe a specific pod:
 kubectl describe pod <pod-name>
+To check the logs of a pod:
 kubectl logs <pod-name>
-### Step 8 - Cleanup
+
+Step 7 — Cleanup
 kubectl delete -f deployment-task5.yaml
 kubectl delete -f service-task5.yaml
 minikube stop
