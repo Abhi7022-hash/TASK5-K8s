@@ -21,7 +21,7 @@ This task helped me understand how Kubernetes manages applications using **pods*
 ###  Step 1 — Starting Minikube
 minikube start --driver=docker
 minikube status
-
+ 
 ###  Step 2 — Creating a Deployment
 I wrote the YAML file named deployment-task5.yaml and applied it:
 kubectl apply -f deployment-task5.yaml
